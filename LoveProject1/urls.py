@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+from Aproject import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-]
+    url(r'^$', views.home),
+    url(r'^when&where/$', views.whenwhere),
+    url(r'^guest/$', views.guest),
+    url(r'^groom-bride/$', views.groom_bridge),
+    url(r'^gallery/$',views.gallery),
+    url(r'^blog/$', views.blog),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

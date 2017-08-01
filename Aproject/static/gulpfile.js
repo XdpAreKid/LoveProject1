@@ -37,8 +37,7 @@ gulp.task('js', function() {
 			'js/superfish.js',
 			'js/jquery.magnific-popup.min.js',
 			'js/magnific-popup-options.js',
-			'js/google_map.js',
-			'js/main.js'
+			'js/google_map.js'
 		], {base: './'}))
 		.pipe(concat('scripts.js'))
 		.pipe(gulp.dest(outputDir))
